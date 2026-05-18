@@ -1,4 +1,31 @@
+# macOS
 .DS_Store
 
+# Godot 4 cache/editor data
 .godot/
+
+# Android export files
 /android/
+
+# Imported assets cache
+.import/
+
+# Mono/C# files
+.mono/
+data_*/
+
+# Export templates/builds
+export_presets.cfg
+
+# Debug/log files
+*.log
+
+# Temporary files
+tmp/
+temp/
+
+# VS Code settings (optional)
+.vscode/
+
+# Thumbnails
+Thumbs.db
