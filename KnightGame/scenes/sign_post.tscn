@@ -1,0 +1,35 @@
+[gd_scene load_steps=5 format=3 uid="uid://bh6be4ngq285x"]
+
+[ext_resource type="Texture2D" uid="uid://dtdncmd6dus80" path="res://assets/sprites/world_tileset.png" id="1_h85dv"]
+[ext_resource type="Script" uid="uid://cah3brgl0c8cq" path="res://scripts/sign_post.gd" id="1_tp6sh"]
+[ext_resource type="FontFile" uid="uid://js78wjypxcro" path="res://assets/fonts/PixelOperator8.ttf" id="2_tp6sh"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lb6rn"]
+size = Vector2(14, 10)
+
+[node name="signPost" type="Area2D"]
+collision_mask = 2
+script = ExtResource("1_tp6sh")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_h85dv")
+region_enabled = true
+region_rect = Rect2(129, 50, 14, 14)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -1)
+shape = SubResource("RectangleShape2D_lb6rn")
+
+[node name="Label" type="Label" parent="."]
+offset_left = -38.0
+offset_top = -47.0
+offset_right = 38.0
+offset_bottom = -24.0
+theme_override_fonts/font = ExtResource("2_tp6sh")
+theme_override_font_sizes/font_size = 8
+text = "Lorem Ipsum"
+horizontal_alignment = 1
+autowrap_mode = 3
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]
